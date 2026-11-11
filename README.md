@@ -1,69 +1,38 @@
-ECG Signal Analysis for Arrhythmia Detection
+# ECG Arrhythmia Analysis - ECG & HRV
 
-An Independent Biomedical Engineering Project
+Analysis of a 10-second ECG signal to detect R-peaks and calculate Heart Rate Variability (HRV) metrics.
 
-1. Project Overview
+## Dataset
+- Sampling Rate: 360 Hz
+- Duration: 10.0 seconds
+- Signal Length: 3600 samples
 
-This project focuses on the computational analysis of Electrocardiogram (ECG) signals using Python and publicly available physiological datasets.
+## Method
+1. Loaded ECG signal
+2. Detected R-peaks using `scipy.signal.find_peaks`
+3. Calculated RR Intervals
+4. Plotted ECG with R-peaks and RR Histogram
+5. Calculated HRV metrics: SDNN, RMSSD, pNN50
 
-It aims to explore digital signal processing techniques, extract relevant cardiac signal features, and investigate ECG patterns associated with different heart rhythms.
+## Results - Final HRV Report
 
-2. Research Objectives
+| Metric | Value |
+| --- | --- |
+| Heart Rate | 74.4 bpm |
+| Mean RR | 806.25 ms |
+| SDNN | 71.94 ms |
+| RMSSD | 123.34 ms |
+| pNN50 | 27.3 % |
+| Total Beats | 13 beats in 10 seconds |
 
-- Explore and visualize electrocardiogram signals.
-- Investigate ECG signal preprocessing and noise reduction techniques.
-- Explore R-peak detection and RR interval extraction.
-- Calculate and analyze heart-rate-related features.
-- Examine ECG patterns associated with different cardiac rhythms.
-- Compare analytical findings with reference annotations.
+## Interpretation
+- Heart Rate 74.4 bpm is within normal resting range (60-100 bpm).
+- Most RR intervals are concentrated around 800 ms, indicating regular rhythm.
+- SDNN of 71.94 ms indicates healthy heart rate variation.
 
-3. Dataset
+## Files
+- `ECG_Analysis.ipynb` - Main analysis notebook
+- `requirements.txt` - Required libraries
 
-MIT-BIH Arrhythmia Database
-
-Source: PhysioNet
-
-https://physionet.org/content/mitdb/1.0.0/
-
-The project uses publicly available ECG recordings and their corresponding reference annotations for educational and analytical purposes.
-
-4. Tools & Technologies
-
-- Python
-- NumPy
-- Pandas
-- Matplotlib
-- SciPy
-- WFDB
-
-5. Project Structure
-
-- "notebooks/" — Data exploration and analytical experiments.
-- "data/" — Dataset documentation and access information.
-- "src/" — Reusable Python scripts.
-- "results/" — Analytical outputs and findings.
-- "images/" — Data visualizations.
-
-6. Expected Analytical Outcomes
-
-- ECG signal visualizations.
-- Signal preprocessing and filtering comparisons.
-- R-peak detection analysis.
-- Heart-rate and RR interval measurements.
-- Comparative analysis of selected ECG rhythm patterns.
-
-7. Project Status
-
-Currently in Development
-
-The project is being developed incrementally, beginning with ECG data acquisition and exploratory signal analysis.
-
-8. Scope and Limitations
-
-This is an independent educational and analytical project. It is not intended to provide clinical diagnoses, medical advice, or validated medical decision-support outputs.
-
-9. References
-
-- MIT-BIH Arrhythmia Database — PhysioNet.
-- WFDB Python Documentation.
-- Scientific literature on ECG signal processing and arrhythmia analysis.
+## Technologies
+Python, NumPy, Pandas, Matplotlib, SciPy, WFDB, Jupyter / Google Colab
